@@ -1,0 +1,404 @@
+1.	Romania intern
+
+Camion complet / FTL:
+0-100 km: 800 - 1200 lei
+100-200 km: 1000 – 1600 lei
+200-300 km: 1400 – 2400 lei
+300-400 km: 2000 - 2800 lei
+400-500 km: 2400 – 3200 lei
+500+ km: 5-6 lei/km
+
+Camion grupaj / LTL:
+0-100 km:
+1-6 paleti: 400-600 lei
+7-15 paleti: 500-800 lei
+16-33 paleti: 600-1200 lei
+
+100-200 km:
+1-6 paleti: 400-700 lei
+7-15 paleti: 500-900 lei
+16-33 paleti: 800-1600 lei
+
+200-300 km: 
+1-6 paleti: 450-900 lei
+7-15 paleti: 700-1600 lei
+16-33 paleti: 1300-2400 lei
+
+300-400 km:
+1-6 paleti: 500-1000 lei
+7-15 paleti: 800-2000 lei
+16-33 paleti: 1400-2800 lei
+
+400-500 km:
+1-6 paleti: 500-1200 lei
+7-15 paleti: 900-2200 lei
+16-33 paleti: 1500-3200 lei
+
+500+ km: 
+1-6 paleti: 600-1400 lei
+7-15 paleti: 1000-2500 lei
+16-33 paleti: 1600- 5-6 lei/km
+
+Sprinter complet max 1.2 to:
+0-100 km: 400 - 900 lei
+100-200 km: 600 – 1200 lei
+200-300 km: 800 – 1600 lei
+300-400 km: 1100 - 1900 lei
+400-500 km: 1300 – 2200 lei
+500+ km: 3-4 lei/km
+
+Sprinter LTL SI FTL:
+0-100 km:
+0-300 kg < 3cbm = 300-400 lei
+300-900 kg < 9cbm = 400-500 lei
+900-1200 kg < 12cbm = 500-600 lei
+1200-1500 kg < 15cbm = 600-800 lei
+1500-2000 kg < 22cbm = 650-900 lei
+
+100-200 km:
+0-300 kg < 3cbm = 350-700 lei
+300-900 kg < 9cbm = 450-800 lei
+900-1200 kg < 12cbm = 500-1000 lei
+1200-1500 kg < 15cbm = 700-1200 lei
+1500-2000 kg < 22cbm = 800-1400 lei
+
+200-300 km: 
+0-300 kg < 3cbm = 450-800 lei
+300-900 kg < 9cbm = 600-1000 lei
+900-1200 kg < 12cbm = 700-1200 lei
+1200-1500 kg < 15cbm = 900-1600 lei
+1500-2000 kg < 22cbm = 1000-1700 lei
+
+300-400 km:
+0-300 kg < 3cbm = 500-900 lei
+300-900 kg < 9cbm = 700-1200 lei
+900-1200 kg < 12cbm = 900-1700 lei
+1200-1500 kg < 15cbm = 1000-1900 lei
+1500-2000 kg < 22cbm = 1200-2100 lei
+
+400-500 km:
+0-300 kg < 3cbm = 550-1000 lei
+300-900 kg < 9cbm = 750-1700 lei
+900-1200 kg < 12cbm = 1100-1900 lei
+1200-1500 kg < 15cbm = 1200-2200 lei
+1500-2000 kg < 22cbm = 1400- 2400 lei
+
+500+ km: 
+0-300 kg < 3cbm = 600-1200 lei
+300-900 kg < 9cbm = 800-1800 lei
+900-1200 kg < 12cbm = 1200-2100 lei
+1200-1500 kg < 15cbm = 1300-2400 lei
+1500-2000 kg < 22cbm = 1400- 2600 lei
+
+
+1.	Cost per km camion complet import:
+
+Marea Britanie 1,1-1,3 EUR+TVA
+Germania 1,08-1,28 EUR+TVA
+Franta 1,05-1,25 EUR+TVA
+Polonia 1,37-1,67 EUR+TVA
+Austria 1,49-1,69 EUR+TVA
+Elvetia 1,25-1,55 EUR+TVA
+Ungaria 1,5-1,8 EUR+TVA
+Cehia 1,37-1,57 EUR+TVA
+Slovacia 1,33-1,53 EUR+TVA
+
+Spania 0,95-1,15 EUR+TVA
+Italia 1,3-1,5 EUR+TVA
+Slovenia 1,4-1,6 EUR+TVA
+
+Danemarca 1,2-1,4 EUR+TVA
+Norvegia 1,2-1,4 EUR+TVA
+Suedia 1,1-1,3 EUR+TVA
+Finlanda 1,1-1,3 EUR+TVA
+Estonia 1,2-1,4 EUR+TVA
+Letonia 1,2-1,4 EUR+TVA
+Lituania 1,2-1,4 EUR+TVA
+
+Grecia 1,5-1,8 EUR+TVA
+Bulgaria 1,6-2 EUR+TVA
+Serbia 1,6-2 EUR+TVA
+Albania 1,6-2 EUR+TVA
+Croatia 1,5-2 EUR+TVA
+Muntenegru 1,6-2 EUR+TVA
+Bosnia si Hertegovina 1,6-2 EUR+TVA
+Macedonia 1,6-2 EUR+TVA
+
+Turcia 1,8-2,2 EUR+TVA
+Moldova1,7-2,2 EUR+TVA
+Ucraina 1,6-2 EUR+TVA
+Belarus 1,5-1,9 EUR+TVA
+
+
+
+2.	Cost per km camion complet export:
+
+Marea Britanie 1,0-1,2 EUR+TVA
+Germania 0,95-1,15 EUR+TVA
+Franta 0,95-1,10 EUR+TVA
+Polonia 0,97-1,17 EUR+TVA
+Austria 1,29-1,49 EUR+TVA
+Elvetia 1,10-1,4 EUR+TVA
+Ungaria 1,3-1,6 EUR+TVA
+Cehia 1,37-1,57 EUR+TVA
+Slovacia 1,33-1,53 EUR+TVA
+
+Spania 0,85-1,05 EUR+TVA
+Italia 1-1,25 EUR+TVA
+Slovenia 1,2-1,4 EUR+TVA
+
+Danemarca 1,0-1,2 EUR+TVA
+Norvegia 1,1-1,3 EUR+TVA
+Suedia 0,95-1,1 EUR+TVA
+Finlanda 1,0-1,2 EUR+TVA
+Estonia 1,1-1,3 EUR+TVA
+Letonia 1,1-1,3 EUR+TVA
+Lituania 1,15-1,3 EUR+TVA
+
+Grecia 1,4-1,7 EUR+TVA
+Bulgaria 1,5-1,9 EUR+TVA
+Serbia 1,4-1,8 EUR+TVA
+Albania 1,4-1,8 EUR+TVA
+Croatia 1,3-1,9 EUR+TVA
+Muntenegru 1,5-1,9 EUR+TVA
+Bosnia si Hertegovina 1,5-1,9 EUR+TVA
+Macedonia 1,5-1,9 EUR+TVA
+
+Turcia 1,4-1,8 EUR+TVA
+Moldova 1,7-2,2 EUR+TVA
+Ucraina 1,4-1,8 EUR+TVA
+Belarus 1,3-1,7 EUR+TVA
+
+
+3.	Cost per metru podea grupaj import:
+
+Marea Britanie 300-400 EUR
+Germania 170-270 EUR
+Franta 300-400 EUR
+Polonia 200-300 EUR
+Austria 150-250 EUR
+Elvetia 200-300 EUR
+Ungaria 150-250 EUR
+Cehia 150-250 EUR
+Slovacia 150-250 EUR
+
+Spania 350-500 EUR
+Italia 200-300 EUR
+Slovenia 150-250 EUR
+
+
+Danemarca 200-300 EUR
+Norvegia 300-400 EUR
+Suedia 250-350 EUR
+Finlanda 250-350 EUR
+Estonia 250-350 EUR
+Letonia 200-300 EUR
+Lituania 200-300 EUR
+
+Grecia 150-250 EUR
+Bulgaria 100-200 EUR
+Serbia 250-350 EUR
+Albania 250-350 EUR
+Croatia 250-350 EUR
+Muntenegru 250-350 EUR
+Bosnia si Hertegovina 250-350 EUR
+Macedonia 250-350 EUR
+
+Turcia 250-350 EUR
+Moldova 200-300 EUR
+Ucraina 300-500 EUR
+Belarus 300-500 EUR
+
+4.	Cost per metru podea grupaj export:
+
+Marea Britanie 300-400 EUR
+Germania 170-270 EUR
+Franta 300-400 EUR
+Polonia 200-300 EUR
+Austria 150-250 EUR
+Elvetia 200-300 EUR
+Ungaria 150-250 EUR
+Cehia 150-250 EUR
+Slovacia 150-250 EUR
+
+Spania 350-500 EUR
+Italia 200-300 EUR
+Slovenia 150-250 EUR
+
+
+Danemarca 200-300 EUR
+Norvegia 300-400 EUR
+Suedia 250-350 EUR
+Finlanda 250-350 EUR
+Estonia 250-350 EUR
+Letonia 200-300 EUR
+Lituania 200-300 EUR
+
+Grecia 150-250 EUR
+Bulgaria 100-200 EUR
+Serbia 250-350 EUR
+Albania 250-350 EUR
+Croatia 250-350 EUR
+Muntenegru 250-350 EUR
+Bosnia si Hertegovina 250-350 EUR
+Macedonia 250-350 EUR
+
+Turcia 250-350 EUR
+Moldova 200-300 EUR
+Ucraina 300-500 EUR
+Belarus 300-500 EUR
+
+
+5.	Cost per km sprinter complet import:
+
+Marea Britanie 0,50-0,60 EUR+TVA
+Germania 0,55-0,65 EUR+TVA
+Franta 0,45-0,55 EUR+TVA
+Polonia 0,57-0,77 EUR+TVA
+Austria 0,65-0,90 EUR+TVA
+Elvetia 0,55-0,75 EUR+TVA
+Ungaria 0,65-0,9 EUR+TVA
+Cehia 0,55-0,75 EUR+TVA
+Slovacia 0,55-0,75 EUR+TVA
+
+Spania 0,4-0,55 EUR+TVA
+Italia 0,50-0,70 EUR+TVA
+Slovenia 0,55-0,75 EUR+TVA
+
+Danemarca 0,50-0,60 EUR+TVA
+Norvegia 0,60-0,75 EUR+TVA
+Suedia 0,50-0,60 EUR+TVA
+Finlanda 0,55-0,65 EUR+TVA
+Estonia 0,50-0,60 EUR+TVA
+Letonia 0,50-0,60 EUR+TVA 
+Lituania 0,50-0,60 EUR+TVA
+
+Grecia 0,65-0,85 EUR+TVA
+Bulgaria 0,65-0,90 EUR+TVA 
+Serbia 0,85-1,10 EUR+TVA
+Albania 0,85-1,10 EUR+TVA
+Croatia 0,85-1,10 EUR+TVA
+Muntenegru 0,85-1,10 EUR+TVA
+Bosnia si Hertegovina 0,85-1,10 EUR+TVA
+Macedonia 0,85-1,10 EUR+TVA
+
+Turcia 0,95-1,30 EUR+TVA
+Moldova 0,85-1,10 EUR+TVA
+Ucraina 1,00-1,30 EUR+TVA
+Belarus 1,00-1,30 EUR+TVA
+
+6.	Cost per km sprinter complet export:
+
+Marea Britanie 0,40-0,50 EUR+TVA
+Germania 0,45-0,55 EUR+TVA
+Franta 0,35-0,45 EUR+TVA
+Polonia 0,42-0,62 EUR+TVA
+Austria 0,45-0,70 EUR+TVA
+Elvetia 0,45-0,65 EUR+TVA
+Ungaria 0,55-0,75 EUR+TVA
+Cehia 0,45-0,65 EUR+TVA
+Slovacia 0,45-0,65 EUR+TVA
+
+Spania 0,3-0,45 EUR+TVA
+Italia 0,35-0,55 EUR+TVA
+Slovenia 0,45-0,65 EUR+TVA
+
+Danemarca 0,40-0,50 EUR+TVA
+Norvegia 0,50-0,65 EUR+TVA
+Suedia 0,40-0,50 EUR+TVA
+Finlanda 0,45-0,55 EUR+TVA
+Estonia 0,40-0,50 EUR+TVA
+Letonia 0,40-0,50 EUR+TVA 
+Lituania 0,40-0,50 EUR+TVA
+
+Grecia 0,55-0,75 EUR+TVA
+Bulgaria 0,65-0,90 EUR+TVA 
+Serbia 0,85-1,10 EUR+TVA
+Albania 0,85-1,10 EUR+TVA
+Croatia 0,85-1,10 EUR+TVA
+Muntenegru 0,85-1,10 EUR+TVA
+Bosnia si Hertegovina 0,85-1,10 EUR+TVA
+Macedonia 0,85-1,10 EUR+TVA
+
+Turcia 0,75-1,00 EUR+TVA
+Moldova 0,85-1,10 EUR+TVA
+Ucraina 1,00-1,30 EUR+TVA
+Belarus 1,00-1,30 EUR+TVA
+
+
+
+7.	Cost per kg grupaj sprinter import:
+
+Marea Britanie  0-300 KG 1,5-2,5  EUR/KG - 300+ KG 1-1,8 EUR/KG
+Germania 0-300 KG 1,2-2  EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Franta 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Polonia 0-300 KG 1,2-2  EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Austria 0-300 KG 1,2-2EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Elvetia 0-300 KG 1,2-2EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Ungaria 0-300 KG 1,0-1,8EUR/KG - 300+ KG 0,6-1,2 EUR/KG
+Cehia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Slovacia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+
+Spania 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Italia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,6-1,3 EUR/KG
+Slovenia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+
+Danemarca 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Norvegia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Suedia 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Finlanda 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Estonia 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Letonia 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Lituania 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+
+Grecia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Bulgaria 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Serbia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Albania 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Croatia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Muntenegru 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Bosnia si Hertegovina 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Macedonia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+
+Turcia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Moldova 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Ucraina 0-300 KG 2-3,6 EUR/KG - 300+ KG 1,5 -3 EUR/KG
+Belarus 0-300 KG 2-3,6 EUR/KG - 300+ KG 1,5 -3 EUR/KG
+
+8.	Cost per kg grupaj sprinter export:
+
+Marea Britanie  0-300 KG 1,5-2,5  EUR/KG - 300+ KG 1-1,8 EUR/KG
+Germania 0-300 KG 1,2-2  EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Franta 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Polonia 0-300 KG 1,2-2  EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Austria 0-300 KG 1,2-2EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Elvetia 0-300 KG 1,2-2EUR/KG - 300+ KG 0,8-1,5 EUR/KG
+Ungaria 0-300 KG 1,0-1,8EUR/KG - 300+ KG 0,6-1,2 EUR/KG
+Cehia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Slovacia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+
+Spania 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Italia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,6-1,3 EUR/KG
+Slovenia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+
+Danemarca 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Norvegia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Suedia 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Finlanda 0-300 KG 1,6-2,8EUR/KG - 300+ KG 1,2-1,7 EUR/KG
+Estonia 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Letonia 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+Lituania 0-300 KG 1,4-2,2  EUR/KG - 300+ KG 1-1,6 EUR/KG
+
+Grecia 0-300 KG 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Bulgaria 1,1-1,9EUR/KG - 300+ KG 0,7-1,4 EUR/KG
+Serbia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Albania 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Croatia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Muntenegru 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Bosnia si Hertegovina 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Macedonia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+
+Turcia 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Moldova 0-300 KG 1,8-3,2EUR/KG - 300+ KG 1,4-2 EUR/KG
+Ucraina 0-300 KG 2-3,6 EUR/KG - 300+ KG 1,5 -3 EUR/KG
+Belarus 0-300 KG 2-3,6 EUR/KG - 300+ KG 1,5 -3 EUR/KG
