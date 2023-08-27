@@ -58,13 +58,27 @@ export const App = () => {
     internalSprinterGoodsSize,
   ]);
 
-  const internalSprinterGoodsSizeOptions = {
+  useEffect(() => {
+    setCarType("");
+    setExternalTripType("");
+    setCarTransportationType("");
+    setNoOfPallets(0);
+    setTripDistanceKm(0);
+    setWeightOfGoods(0);
+    setNoOfFloorSquareMetters(0);
+    setImportingFromCountry("");
+    setExportingToCountry("");
+    setInternalSprinterGoodsSize("");
+
+  },[tripType])
+
+  const internalSprinterGoodsSizeOptions = React.useMemo(() => ({
     "0-300 kg < 3cbm": [300, 400],
     "300-900 kg < 9cbm": [400, 500],
     "900-1200 kg < 12cbm": [500, 600],
     "1200-1500 kg < 15cbm": [600, 800],
     "1500-2000 kg < 22cbm": [650, 900],
-  };
+  }))
 
   const handleSelectionChange = (value) => {
     setTripType(value);
@@ -241,7 +255,7 @@ export const App = () => {
           {Object.entries(
             extern[externalTripType][carType][carTransportationType]
           ).map(([country, priceRange]) => (
-            <option value={country}>{country}</option>
+            <option key={country} value={country}>{country}</option>
           ))}
         </Select>
       )}
