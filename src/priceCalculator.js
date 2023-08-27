@@ -22,7 +22,7 @@ export const calculateInternalPrice = (
     tripDistanceKm > 0
   ) {
     const matchingDistanceKey = findDistanceKey(pricingObject, tripDistanceKm);
-
+    
     if (matchingDistanceKey) {
       const palletKeys = Object.keys(pricingObject[matchingDistanceKey]);
       const matchingPalletKeyIndex = palletKeys
@@ -35,7 +35,9 @@ export const calculateInternalPrice = (
       if (matchingPalletKey) {
         priceRange = pricingObject[matchingDistanceKey][matchingPalletKey];
       }
-      if (matchingPalletKey === "16-33 paleti") {
+      if (matchingPalletKey === "16-33 paleti" && 
+      matchingDistanceKey === "500+ km") {
+        console.log(priceRange)
         return (
           roundToDecimal(priceRange[0]) +
           "-" +
