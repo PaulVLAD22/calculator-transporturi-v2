@@ -1,59 +1,22 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+Cum se schimba preturile aplicatiei? 
 
-## Available Scripts
+1. acceseaza <a href="https://github.com/PaulVLAD22/calculator-transporturi-v2/blob/main/src/assets/transport_data.tsx">fisierul cu preturi</a>
 
-In the project directory, you can run:
+2. Explicatie fisier:
+  structura linie : intern/extern[tip_masina][tip_transport] apoi in functie de caz 
 
-### `npm start`
+   Exemplu 1: linia 6 -intern[camion][complet]["0-100 km"] este pretul pentru transporturi interne cu masina de tip camion, transport tip complet, pe distante intre 0 si 100 km
+   Daca se doreste schimbarea pretului se modifica valorile [800,1200] de la linia 6, exemplu : [900,1300] daca vreau sa schimb atat limita inferioara cat si cea superioara
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+   Exemplu 2: linia 57 - intern[sprinter][ltl]["0-100 km"]["0-300 kg < 3cbm"] poate fi modificat range-ul [300, 400] pentru a schimba pretul transporturilor interne sprinter ltl intre 0 si 100 km si cu marfa
+   cu calitatile 0-300 kg < 3cbm
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+   Exemplu 3: linia 106 - extern[import][camion][complet]["Marea Britanie"] poate fi modificat range-ul [1.1, 1.3] spre ex la [1.5,1.8] pentru a schimba pretul per km de import cu camion complet din Marea Britanie
 
-### `npm test`
+   Exemplu 4: linia 444 - extern[export][sprinter][grupaj][Germania]["300+ KG"] poate fi modificat range-ul "300+ KG": [1, 1.8] pentru a schimba pretul per km
 
-Launches the test runner in the interactive watch mode.<br /> See the section
-about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
-
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
-
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+   EXCEPTII :
+    1. linie 11 - intern[camion][complet]["500+ km] - [5, 6] :  range calculat astfel : pret de la 5*km la 6*km (lei) 
+    3. linie 42 - intern[camion][grupaj]["500+ km"]["16-33 paleti"] are pretul [1600,[5,6]] primul fiind suma de lei minima, al doilea fiind un range calculat astfel : pret de la 5*km la 6*km (lei)
+  ...
