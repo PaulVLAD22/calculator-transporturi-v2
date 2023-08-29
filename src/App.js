@@ -234,7 +234,7 @@ export const App = () => {
             >
               <NumberInputField placeholder="Nr de paleti" />
             </NumberInput>
-            <FormLabel>Nr Metrii Patrati</FormLabel>
+            <FormLabel>Nr Metri Patrati</FormLabel>
             <NumberInput
               onChange={(value) => setNoOfFloorSquareMetters(+value)}
               value={noOfFloorSquareMetters}
