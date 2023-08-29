@@ -22,7 +22,6 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import { Logo } from "./Logo";
 import { extern, intern } from "./assets/transport_data";
 import {
   calculateExternalPrice,
@@ -58,8 +57,6 @@ export const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [price, setPrice] = useState("");
   const [colorMode, setColorMode] = useState("");
-
-  console.log(colorMode);
 
   useEffect(() => {
     setPrice("");
@@ -302,11 +299,15 @@ export const App = () => {
         >
           {Object.entries(
             extern[externalTripType][carType][carTransportationType]
-          ).map(([country, priceRange]) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
-          ))}
+          )
+            .sort(([countryA, priceRangeA], [countryB, priceRangeB]) =>
+              countryA.localeCompare(countryB)
+            )
+            .map(([country, priceRange]) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
         </Select>
       )}
     </>
