@@ -7,6 +7,6 @@ const { definePartsStyle, defineMultiStyleConfig } =
 export const radioTheme = defineMultiStyleConfig({
   defaultProps: {
     colorScheme: "yellow",
-    size: "lg",
+    size: "md",
   },
 });

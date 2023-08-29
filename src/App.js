@@ -101,9 +101,9 @@ export const App = () => {
   const logoComponent = (
     <Box mb={"2"}>
       {colorMode === "light" ? (
-        <Image src={logoBlack} alt="Logo" w={"500px"} h="auto" ml="2" />
+        <Image src={logoBlack} alt="Logo" w={"400px"} h="auto" ml="2" />
       ) : (
-        <Image src={logoWhite} alt="Logo" w={"500px"} h="auto" ml="2" />
+        <Image src={logoWhite} alt="Logo" w={"400px"} h="auto" ml="2" />
       )}
     </Box>
   );
@@ -399,7 +399,7 @@ export const App = () => {
       >
         <VStack
           w={{ base: "100%", md: "50%" }}
-          gap="20px"
+          gap="15px"
           boxShadow={"dark-lg"}
           px="20"
           py="10"
