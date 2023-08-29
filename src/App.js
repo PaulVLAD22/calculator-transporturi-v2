@@ -17,6 +17,7 @@ import {
   Select,
   Button,
   Text,
+  Flex,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Logo } from "./Logo";
@@ -69,8 +70,15 @@ export const App = () => {
     setImportingFromCountry("");
     setExportingToCountry("");
     setInternalSprinterGoodsSize("");
+  }, [tripType]);
 
-  },[tripType])
+  useEffect(() => {
+    setNoOfPallets(0);
+  }, [noOfFloorSquareMetters]);
+
+  useEffect(() => {
+    setNoOfFloorSquareMetters(0);
+  }, [noOfPallets]);
 
   const internalSprinterGoodsSizeOptions = React.useMemo(() => ({
     "0-300 kg < 3cbm": [300, 400],
@@ -78,7 +86,7 @@ export const App = () => {
     "900-1200 kg < 12cbm": [500, 600],
     "1200-1500 kg < 15cbm": [600, 800],
     "1500-2000 kg < 22cbm": [650, 900],
-  }))
+  }));
 
   const handleSelectionChange = (value) => {
     setTripType(value);
@@ -179,7 +187,7 @@ export const App = () => {
         >
           <Stack direction="row">
             <Radio value="complet">Complet</Radio>
-            <Radio value="grupaj">Grupaj</Radio>
+            <Radio value="grupaj">Grupaj/LFL</Radio>
           </Stack>
         </RadioGroup>
       )}
@@ -190,16 +198,28 @@ export const App = () => {
     <>
       {carType === "camion" && carTransportationType === "grupaj" && (
         <>
-          <FormLabel>Nr Paleti</FormLabel>
-          <NumberInput
-            onChange={(value) => setNoOfPallets(+value)}
-            value={noOfPallets}
-            min={0}
-            max={33}
-            step={1}
-          >
-            <NumberInputField placeholder="Nr de paleti" />
-          </NumberInput>
+          <Flex gap={"2rem"}>
+            <FormLabel>Nr Paleti</FormLabel>
+            <NumberInput
+              onChange={(value) => setNoOfPallets(+value)}
+              value={noOfPallets}
+              min={0}
+              max={33}
+              step={1}
+            >
+              <NumberInputField placeholder="Nr de paleti" />
+            </NumberInput>
+            <FormLabel>Nr Metrii Patrati</FormLabel>
+            <NumberInput
+              onChange={(value) => setNoOfFloorSquareMetters(+value)}
+              value={noOfFloorSquareMetters}
+              max={13}
+              min={0}
+              step={1}
+            >
+              <NumberInputField placeholder="Nr de metiri patrati" />
+            </NumberInput>
+          </Flex>
           {tripDistanceInKmInput}
         </>
       )}
@@ -255,7 +275,9 @@ export const App = () => {
           {Object.entries(
             extern[externalTripType][carType][carTransportationType]
           ).map(([country, priceRange]) => (
-            <option key={country} value={country}>{country}</option>
+            <option key={country} value={country}>
+              {country}
+            </option>
           ))}
         </Select>
       )}
@@ -306,7 +328,7 @@ export const App = () => {
     return (
       (carType === "camion" &&
         carTransportationType === "grupaj" &&
-        noOfPallets > 0 &&
+        (noOfPallets > 0 || noOfFloorSquareMetters) &&
         tripDistanceKm > 0) ||
       (carType === "camion" &&
         carTransportationType === "complet" &&
@@ -368,7 +390,8 @@ export const App = () => {
                         carTransportationType,
                         noOfPallets,
                         tripDistanceKm,
-                        internalSprinterGoodsSize
+                        internalSprinterGoodsSize,
+                        noOfFloorSquareMetters
                       )
                     )
                   }

@@ -10,7 +10,8 @@ export const calculateInternalPrice = (
   carTransportationType,
   noOfPallets,
   tripDistanceKm,
-  internalSprinterGoodsSize
+  internalSprinterGoodsSize,
+  noOfFloorSquareMetters
 ) => {
   let priceRange = [0, 0]; // Default price range
 
@@ -18,11 +19,14 @@ export const calculateInternalPrice = (
   if (
     carType === "camion" &&
     carTransportationType === "grupaj" &&
-    noOfPallets > 0 &&
+    (noOfPallets > 0 || noOfFloorSquareMetters > 0) &&
     tripDistanceKm > 0
   ) {
+    if (noOfFloorSquareMetters > 0 && noOfPallets === 0)
+      noOfPallets = squareMettersToPallets(noOfFloorSquareMetters);
+
     const matchingDistanceKey = findDistanceKey(pricingObject, tripDistanceKm);
-    
+
     if (matchingDistanceKey) {
       const palletKeys = Object.keys(pricingObject[matchingDistanceKey]);
       const matchingPalletKeyIndex = palletKeys
@@ -35,9 +39,11 @@ export const calculateInternalPrice = (
       if (matchingPalletKey) {
         priceRange = pricingObject[matchingDistanceKey][matchingPalletKey];
       }
-      if (matchingPalletKey === "16-33 paleti" && 
-      matchingDistanceKey === "500+ km") {
-        console.log(priceRange)
+      if (
+        matchingPalletKey === "16-33 paleti" &&
+        matchingDistanceKey === "500+ km"
+      ) {
+        console.log(priceRange);
         return (
           roundToDecimal(priceRange[0]) +
           "-" +
@@ -126,6 +132,12 @@ const findWeightKey = (pricingObject, tripDistanceKm) => {
     });
   const matchingWeightKey = weightKeys[matchingWeightKeyIndex];
   return matchingWeightKey;
+};
+
+const squareMettersToPallets = (noOfFloorSquareMetters) => {
+  const factorConversie = 0.4;
+  const paleti = noOfFloorSquareMetters / factorConversie;
+  return Math.floor(paleti);
 };
 
 export const calculateExternalPrice = (
