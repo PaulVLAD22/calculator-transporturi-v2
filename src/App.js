@@ -150,7 +150,7 @@ export const App = () => {
 
   const carTypeInputs = (
     <RadioGroup onChange={handleCarTypeChange} value={carType}>
-      <Stack direction="row" mb={4}>
+      <Stack direction="row">
         <Radio value="camion">Camion</Radio>
         <Radio value="sprinter">Sprinter</Radio>
       </Stack>
