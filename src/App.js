@@ -99,13 +99,13 @@ export const App = () => {
   }, [noOfPallets]);
 
   const logoComponent = (
-    <>
+    <Box mb={"2"}>
       {colorMode === "light" ? (
         <Image src={logoBlack} alt="Logo" w={"500px"} h="auto" ml="2" />
       ) : (
         <Image src={logoWhite} alt="Logo" w={"500px"} h="auto" ml="2" />
       )}
-    </>
+    </Box>
   );
 
   const internalSprinterGoodsSizeOptions = React.useMemo(() => ({
@@ -399,13 +399,12 @@ export const App = () => {
       >
         <VStack
           w={{ base: "100%", md: "50%" }}
-          gap="10px"
+          gap="20px"
           boxShadow={"dark-lg"}
           px="20"
           py="10"
           borderRadius={"3xl"}
           zIndex={1}
-          minH={"500px"}
         >
           <ColorModeSwitcher setColorMode={setColorMode} />
           {logoComponent}
