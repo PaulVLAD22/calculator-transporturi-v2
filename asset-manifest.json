@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.js": "/calculator-transporturi-v2/static/js/main.d744c69b.js",
+    "main.js": "/calculator-transporturi-v2/static/js/main.4d2cafcd.js",
     "static/js/787.1fd1d032.chunk.js": "/calculator-transporturi-v2/static/js/787.1fd1d032.chunk.js",
+    "static/media/logo_black.png": "/calculator-transporturi-v2/static/media/logo_black.6183f1b5999ba72cb958.png",
+    "static/media/logo_white.png": "/calculator-transporturi-v2/static/media/logo_white.13a66ce841f87105a432.png",
     "static/media/logo.svg": "/calculator-transporturi-v2/static/media/logo.314a949b75516e3aca4aeb6467362e8d.svg",
     "index.html": "/calculator-transporturi-v2/index.html",
-    "main.d744c69b.js.map": "/calculator-transporturi-v2/static/js/main.d744c69b.js.map",
+    "main.4d2cafcd.js.map": "/calculator-transporturi-v2/static/js/main.4d2cafcd.js.map",
     "787.1fd1d032.chunk.js.map": "/calculator-transporturi-v2/static/js/787.1fd1d032.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d744c69b.js"
+    "static/js/main.4d2cafcd.js"
   ]
 }
