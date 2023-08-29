@@ -317,12 +317,12 @@ export const App = () => {
     <>
       {carType === "camion" && carTransportationType === "grupaj" && (
         <>
-          <FormLabel>Metrii podea</FormLabel>
+          <FormLabel>Metri podea</FormLabel>
           <NumberInput
             onChange={(value) => setNoOfFloorSquareMetters(+value)}
             value={noOfFloorSquareMetters}
           >
-            <NumberInputField placeholder="Nr metrii podea" />
+            <NumberInputField placeholder="Nr metri podea" />
           </NumberInput>
         </>
       )}
