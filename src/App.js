@@ -18,6 +18,8 @@ import {
   Button,
   Text,
   Flex,
+  Image,
+  extendTheme,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Logo } from "./Logo";
@@ -26,6 +28,19 @@ import {
   calculateExternalPrice,
   calculateInternalPrice,
 } from "./priceCalculator";
+import logoBlack from "./assets/logo_black.png";
+import logoWhite from "./assets/logo_white.png";
+import { radioTheme } from "./components/radio";
+import { buttonTheme } from "./components/button";
+import { formLabelTheme } from "./components/formLabel";
+
+const customTheme = extendTheme({
+  components: {
+    Radio: radioTheme,
+    Button: buttonTheme,
+    FormLabel: formLabelTheme,
+  },
+});
 
 export const App = () => {
   const [tripType, setTripType] = useState(""); // intern/extern
@@ -42,6 +57,9 @@ export const App = () => {
     useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [price, setPrice] = useState("");
+  const [colorMode, setColorMode] = useState("");
+
+  console.log(colorMode);
 
   useEffect(() => {
     setPrice("");
@@ -79,6 +97,16 @@ export const App = () => {
   useEffect(() => {
     setNoOfFloorSquareMetters(0);
   }, [noOfPallets]);
+
+  const logoComponent = (
+    <>
+      {colorMode === "light" ? (
+        <Image src={logoBlack} alt="Logo" w={"500px"} h="auto" ml="2" />
+      ) : (
+        <Image src={logoWhite} alt="Logo" w={"500px"} h="auto" ml="2" />
+      )}
+    </>
+  );
 
   const internalSprinterGoodsSizeOptions = React.useMemo(() => ({
     "0-300 kg < 3cbm": [300, 400],
@@ -361,8 +389,14 @@ export const App = () => {
   };
 
   return (
-    <ChakraProvider theme={theme}>
-      <Center className="App" w="100vw" h="100vh" overflow="hidden">
+    <ChakraProvider theme={customTheme}>
+      <Center
+        className="App"
+        w="100vw"
+        h="100vh"
+        overflow="hidden"
+        position="relative"
+      >
         <VStack
           w={{ base: "100%", md: "50%" }}
           gap="10px"
@@ -370,11 +404,11 @@ export const App = () => {
           px="20"
           py="10"
           borderRadius={"3xl"}
+          zIndex={1}
+          minH={"500px"}
         >
-          <Text fontFamily={""} textAlign={"center"} fontSize="5xl">
-            Transportation Calculator
-          </Text>
-          <ColorModeSwitcher />
+          <ColorModeSwitcher setColorMode={setColorMode} />
+          {logoComponent}
           {tripTypeRadio}
           {tripType === "intern" && (
             <>
