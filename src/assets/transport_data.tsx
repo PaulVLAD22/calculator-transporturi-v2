@@ -103,6 +103,13 @@ export const extern = {
   import: {
     camion: {
       complet: {
+        Olanda: [1.05, 1.25],
+        Belgia: [1.05, 1.25],
+        Portugalia: [0.95, 1.15],
+        Irlanda: [1.6, 1.9],
+        "Macedonia de Nord": [1.6, 2],
+        Kosovo: [1.6, 2],
+        Luxemburg: [1.05, 1.25],
         "Marea Britanie": [1.1, 1.3],
         Germania: [1.08, 1.28],
         Franta: [1.05, 1.25],
@@ -136,6 +143,13 @@ export const extern = {
         Belarus: [1.5, 1.9],
       },
       grupaj: {
+        Olanda: [200, 300],
+        Belgia: [200, 300],
+        Portugalia: [350, 550],
+        Irlanda: [500, 700],
+        "Macedonia de Nord": [250, 350],
+        Kosovo: [250, 350],
+        Luxemburg: [200, 300],
         "Marea Britanie": [300, 400],
         Germania: [170, 270],
         Franta: [300, 400],
@@ -171,6 +185,13 @@ export const extern = {
     },
     sprinter: {
       complet: {
+        Olanda: [0.45, 0.55],
+        Belgia: [0.45, 0.55],
+        Portugalia: [0.4, 0.55],
+        Irlanda: [0.55, 0.75],
+        "Macedonia de Nord": [0.85, 1.1],
+        Kosovo: [0.85, 1.1],
+        Luxemburg: [0.45, 0.55],
         "Marea Britanie": [0.5, 0.6],
         Germania: [0.55, 0.65],
         Franta: [0.45, 0.55],
@@ -204,6 +225,34 @@ export const extern = {
         Belarus: [1.0, 1.3],
       },
       grupaj: {
+        Olanda: {
+          "0-300 KG": [1.2, 2],
+          "300+ KG": [0.8, 1.5],
+        },
+        Belgia: {
+          "0-300 KG": [1.2, 2],
+          "300+ KG": [0.8, 1.5],
+        },
+        Portugalia: {
+          "0-300 KG": [1.6, 2.8],
+          "300+ KG": [1.2, 1.7],
+        },
+        Irlanda: {
+          "0-300 KG": [2.5, 5],
+          "300+ KG": [1.5, 3.5],
+        },
+        "Macedonia de Nord": {
+          "0-300 KG": [1.8, 3.2],
+          "300+ KG": [1.4, 2],
+        },
+        Kosovo: {
+          "0-300 KG": [1.8, 3.2],
+          "300+ KG": [1.4, 2],
+        },
+        Luxemburg: {
+          "0-300 KG": [1.2, 2],
+          "300+ KG": [0.8, 1.5],
+        },
         "Marea Britanie": {
           "0-300 KG": [1.5, 2.5],
           "300+ KG": [1, 1.8],
@@ -334,6 +383,13 @@ export const extern = {
   export: {
     camion: {
       complet: {
+        Olanda: [0.95, 1.15],
+        Belgia: [0.95, 1.15],
+        Portugalia: [0.85, 1.05],
+        Irlanda: [1.6, 1.9],
+        "Macedonia de Nord": [1.6, 2],
+        Kosovo: [1.6, 2],
+        Luxemburg: [0.95, 1.15],
         "Marea Britanie": [1.0, 1.2],
         Germania: [0.95, 1.15],
         Franta: [0.95, 1.1],
@@ -367,6 +423,13 @@ export const extern = {
         Belarus: [1.3, 1.7],
       },
       grupaj: {
+        Olanda: [150, 250],
+        Belgia: [150, 250],
+        Portugalia: [300, 500],
+        Irlanda: [500, 700],
+        "Macedonia de Nord": [250, 350],
+        Kosovo: [250, 350],
+        Luxemburg: [150, 250],
         "Marea Britanie": [300, 400],
         Germania: [170, 270],
         Franta: [300, 400],
@@ -402,6 +465,11 @@ export const extern = {
     },
     sprinter: {
       complet: {
+        Olanda: [0.35, 0.45],
+        Belgia: [0.35, 0.45],
+        Portugalia: [0.3, 0.45],
+        Irlanda: [0.55, 0.75],
+        Luxemburg: [0.35, 0.45],
         "Marea Britanie": [0.4, 0.5],
         Germania: [0.45, 0.55],
         Franta: [0.35, 0.45],
@@ -435,6 +503,34 @@ export const extern = {
         Belarus: [1.0, 1.3],
       },
       grupaj: {
+        Olanda: {
+          "0-300 KG": [1.1, 1.9],
+          "300+ KG": [0.7, 1.4],
+        },
+        Belgia: {
+          "0-300 KG": [1.1, 1.9],
+          "300+ KG": [0.7, 1.4],
+        },
+        Portugalia: {
+          "0-300 KG": [1.4, 2.5],
+          "300+ KG": [1.2, 1.7],
+        },
+        Irlanda: {
+          "0-300 KG": [2.5, 5],
+          "300+ KG": [1.5, 3.5],
+        },
+        "Macedonia de Nord": {
+          "0-300 KG": [1.8, 3.2],
+          "300+ KG": [1.4, 2],
+        },
+        Kosovo: {
+          "0-300 KG": [1.8, 3.2],
+          "300+ KG": [1.4, 2],
+        },
+        Luxemburg: {
+          "0-300 KG": [1.1, 1.9],
+          "300+ KG": [0.7, 1.4],
+        },
         "Marea Britanie": {
           "0-300 KG": [1.5, 2.5],
           "300+ KG": [1, 1.8],
