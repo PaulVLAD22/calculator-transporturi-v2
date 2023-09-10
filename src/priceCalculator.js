@@ -1,6 +1,6 @@
 import { intern, extern } from "./assets/transport_data";
 
-const roundToDecimal = (number, decimalPlaces = 1) => {
+export const roundToDecimal = (number, decimalPlaces = 1) => {
   const factor = 10 ** decimalPlaces;
   return Math.round(number * factor) / factor;
 };

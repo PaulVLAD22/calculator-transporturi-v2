@@ -26,12 +26,14 @@ import { extern, intern } from "./assets/transport_data";
 import {
   calculateExternalPrice,
   calculateInternalPrice,
+  roundToDecimal,
 } from "./priceCalculator";
 import logoBlack from "./assets/logo_black.png";
 import logoWhite from "./assets/logo_white.png";
 import { radioTheme } from "./components/radio";
 import { buttonTheme } from "./components/button";
 import { formLabelTheme } from "./components/formLabel";
+import { getMultiplier } from "./multiplierCalculator";
 
 const customTheme = extendTheme({
   components: {
@@ -57,6 +59,7 @@ export const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [price, setPrice] = useState("");
   const [colorMode, setColorMode] = useState("");
+  const [carFrigoAdrNormalType, setCarFrigoAdrNormalType] = useState("");
 
   useEffect(() => {
     setPrice("");
@@ -85,6 +88,7 @@ export const App = () => {
     setImportingFromCountry("");
     setExportingToCountry("");
     setInternalSprinterGoodsSize("");
+    setCarFrigoAdrNormalType("");
   }, [tripType]);
 
   useEffect(() => {
@@ -124,6 +128,10 @@ export const App = () => {
     setCarType(value);
   };
 
+  const handleFrigoAdrNormalInputsChange = (value) => {
+    setCarFrigoAdrNormalType(value);
+  };
+
   const tripDistanceInKmInput = (
     <>
       <FormLabel>Nr kilometri</FormLabel>
@@ -145,6 +153,18 @@ export const App = () => {
     </RadioGroup>
   );
 
+  const frigoAdrNormalInputs = (
+    <RadioGroup
+      onChange={handleFrigoAdrNormalInputsChange}
+      value={carFrigoAdrNormalType}
+    >
+      <Stack direction="row">
+        <Radio value="normal">Normal</Radio>
+        <Radio value="frigo">FRIGO</Radio>
+        <Radio value="adr">ADR</Radio>
+      </Stack>
+    </RadioGroup>
+  );
   const carTypeInputs = (
     <RadioGroup onChange={handleCarTypeChange} value={carType}>
       <Stack direction="row">
@@ -389,6 +409,30 @@ export const App = () => {
     );
   };
 
+  const calculateTripPrice = () => {
+    let multiplier = getMultiplier(
+      carFrigoAdrNormalType,
+      carType,
+      carTransportationType
+    );
+    let internalPrice = calculateInternalPrice(
+      carType,
+      carTransportationType,
+      noOfPallets,
+      tripDistanceKm,
+      internalSprinterGoodsSize,
+      noOfFloorSquareMetters
+    );
+    let pricesArray = internalPrice.split("-");
+    let lowerPrice = pricesArray[0];
+    let higherPrice = pricesArray[1];
+    setPrice(
+      roundToDecimal(multiplier * lowerPrice) +
+        " - " +
+        roundToDecimal(multiplier * higherPrice)
+    );
+  };
+
   return (
     <ChakraProvider theme={customTheme}>
       <Center
@@ -413,25 +457,11 @@ export const App = () => {
           {tripType === "intern" && (
             <>
               {carTypeInputs}
-              {carType !== "" && internalTransportionTypeInputs}
+              {carType !== "" && frigoAdrNormalInputs}
+              {carFrigoAdrNormalType !== "" && internalTransportionTypeInputs}
               {carTransportationType !== "" && tripTypeInternNumberInput}
               {internalInputFieldsAreValid() && (
-                <Button
-                  onClick={() =>
-                    setPrice(
-                      calculateInternalPrice(
-                        carType,
-                        carTransportationType,
-                        noOfPallets,
-                        tripDistanceKm,
-                        internalSprinterGoodsSize,
-                        noOfFloorSquareMetters
-                      )
-                    )
-                  }
-                >
-                  Calculate
-                </Button>
+                <Button onClick={() => calculateTripPrice()}>Calculate</Button>
               )}
             </>
           )}
@@ -439,29 +469,14 @@ export const App = () => {
             <>
               {externalTripTypeInputs}
               {externalTripType && carTypeInputs}
-              {carType !== "" && externalCarTransportationTypeInputs}
+              {carType !== "" && frigoAdrNormalInputs}
+              {carFrigoAdrNormalType !== "" &&
+                externalCarTransportationTypeInputs}
               {carTransportationType !== "" && externalCountryInput}
               {(importingFromCountry !== "" || exportingToCountry !== "") &&
                 externalTripNumberInput}
               {externalInputFieldsAreValid() && (
-                <Button
-                  onClick={() =>
-                    setPrice(
-                      calculateExternalPrice(
-                        carType,
-                        carTransportationType,
-                        tripDistanceKm,
-                        externalTripType,
-                        importingFromCountry,
-                        exportingToCountry,
-                        weightOfGoods,
-                        noOfFloorSquareMetters
-                      )
-                    )
-                  }
-                >
-                  Calculate
-                </Button>
+                <Button onClick={() => calculateTripPrice()}>Calculate</Button>
               )}
             </>
           )}
