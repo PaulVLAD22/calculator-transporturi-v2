@@ -134,12 +134,12 @@ export const App = () => {
 
   const tripDistanceInKmInput = (
     <>
-      <FormLabel>Nr kilometri</FormLabel>
+      <FormLabel>Distanta in km:</FormLabel>
       <NumberInput
         onChange={(value) => setTripDistanceKm(+value)}
         value={tripDistanceKm}
       >
-        <NumberInputField placeholder="Nr kilometri" />
+        <NumberInputField placeholder="Distanta in km" />
       </NumberInput>
     </>
   );
@@ -409,21 +409,36 @@ export const App = () => {
     );
   };
 
-  const calculateTripPrice = () => {
+  const calculateTripPrice = (tripType) => {
+    let price;
     let multiplier = getMultiplier(
       carFrigoAdrNormalType,
       carType,
       carTransportationType
     );
-    let internalPrice = calculateInternalPrice(
-      carType,
-      carTransportationType,
-      noOfPallets,
-      tripDistanceKm,
-      internalSprinterGoodsSize,
-      noOfFloorSquareMetters
-    );
-    let pricesArray = internalPrice.split("-");
+    if (tripType === "extern") {
+      price = calculateExternalPrice(
+        carType,
+        carTransportationType,
+        tripDistanceKm,
+        externalTripType,
+        importingFromCountry,
+        exportingToCountry,
+        weightOfGoods,
+        noOfFloorSquareMetters
+      );
+    } else if (tripType === "intern") {
+      price = calculateInternalPrice(
+        carType,
+        carTransportationType,
+        noOfPallets,
+        tripDistanceKm,
+        internalSprinterGoodsSize,
+        noOfFloorSquareMetters
+      );
+    }
+
+    let pricesArray = price.split("-");
     let lowerPrice = pricesArray[0];
     let higherPrice = pricesArray[1];
     setPrice(
@@ -461,7 +476,7 @@ export const App = () => {
               {carFrigoAdrNormalType !== "" && internalTransportionTypeInputs}
               {carTransportationType !== "" && tripTypeInternNumberInput}
               {internalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice()}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
               )}
             </>
           )}
@@ -476,7 +491,7 @@ export const App = () => {
               {(importingFromCountry !== "" || exportingToCountry !== "") &&
                 externalTripNumberInput}
               {externalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice()}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
               )}
             </>
           )}
