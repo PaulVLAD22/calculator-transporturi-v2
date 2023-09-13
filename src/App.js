@@ -27,13 +27,13 @@ import {
   calculateExternalPrice,
   calculateInternalPrice,
   roundToDecimal,
-} from "./priceCalculator";
+} from "./utils/priceCalculator";
 import logoBlack from "./assets/logo_black.png";
 import logoWhite from "./assets/logo_white.png";
 import { radioTheme } from "./components/radio";
 import { buttonTheme } from "./components/button";
 import { formLabelTheme } from "./components/formLabel";
-import { getMultiplier } from "./multiplierCalculator";
+import { getMultiplier } from "./utils/multiplierCalculator";
 
 const customTheme = extendTheme({
   components: {
@@ -60,7 +60,7 @@ export const App = () => {
   const [price, setPrice] = useState("");
   const [colorMode, setColorMode] = useState("");
   const [carFrigoAdrNormalType, setCarFrigoAdrNormalType] = useState("");
-
+  const [showInsertCitiesInputs, setShowInsertCitiesInputs] = useState(false);
   useEffect(() => {
     setPrice("");
   }, [
@@ -239,6 +239,31 @@ export const App = () => {
     </>
   );
 
+  const handleShowInsertCitiesInputsChange = (value) => {
+    if (value === "distanta") {
+      setShowInsertCitiesInputs(false)
+    } else if (value==="orase"){
+      setShowInsertCitiesInputs(true)
+    }
+  }
+  const setShowInsertCitiesInput = (
+    <RadioGroup
+          onChange={handleShowInsertCitiesInputsChange}
+          value={showInsertCitiesInputs===false ? "distanta" : "orase"}
+        >
+          <Stack direction="row">
+            <Radio value="distanta" >Distanta</Radio>
+            <Radio value="orase">Orase</Radio>
+          </Stack>
+        </RadioGroup>
+  )
+
+  const insertCitiesInputs = (
+    <Select>
+      <option key ="bucuresti">Bucuresti</option>
+    </Select>
+  )
+
   const tripTypeInternNumberInput = (
     <>
       {carType === "camion" && carTransportationType === "grupaj" && (
@@ -366,12 +391,6 @@ export const App = () => {
     </>
   );
 
-  console.log(
-    internalSprinterGoodsSize,
-    tripDistanceKm,
-    carType,
-    carTransportationType
-  );
 
   const internalInputFieldsAreValid = () => {
     return (
@@ -487,7 +506,10 @@ export const App = () => {
               {carType !== "" && frigoAdrNormalInputs}
               {carFrigoAdrNormalType !== "" &&
                 externalCarTransportationTypeInputs}
-              {carTransportationType !== "" && externalCountryInput}
+              {carTransportationType !== "" && setShowInsertCitiesInput}
+              {showInsertCitiesInputs===false &&
+              externalCountryInput}
+              {showInsertCitiesInputs === true &&  insertCitiesInputs}
               {(importingFromCountry !== "" || exportingToCountry !== "") &&
                 externalTripNumberInput}
               {externalInputFieldsAreValid() && (
