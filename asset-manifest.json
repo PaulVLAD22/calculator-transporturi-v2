@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/calculator-transporturi-v2/static/js/main.7832e213.js",
-    "static/js/787.1fd1d032.chunk.js": "/calculator-transporturi-v2/static/js/787.1fd1d032.chunk.js",
-    "static/media/logo_black.png": "/calculator-transporturi-v2/static/media/logo_black.6183f1b5999ba72cb958.png",
-    "static/media/logo_white.png": "/calculator-transporturi-v2/static/media/logo_white.13a66ce841f87105a432.png",
-    "index.html": "/calculator-transporturi-v2/index.html",
-    "main.7832e213.js.map": "/calculator-transporturi-v2/static/js/main.7832e213.js.map",
-    "787.1fd1d032.chunk.js.map": "/calculator-transporturi-v2/static/js/787.1fd1d032.chunk.js.map"
+    "main.js": "/static/js/main.093357e0.js",
+    "static/js/787.1fd1d032.chunk.js": "/static/js/787.1fd1d032.chunk.js",
+    "static/media/logo_black.png": "/static/media/logo_black.6183f1b5999ba72cb958.png",
+    "static/media/logo_white.png": "/static/media/logo_white.13a66ce841f87105a432.png",
+    "index.html": "/index.html",
+    "main.093357e0.js.map": "/static/js/main.093357e0.js.map",
+    "787.1fd1d032.chunk.js.map": "/static/js/787.1fd1d032.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.7832e213.js"
+    "static/js/main.093357e0.js"
   ]
 }
