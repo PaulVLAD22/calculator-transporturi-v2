@@ -30,10 +30,11 @@ import {
 } from "./utils/priceCalculator";
 import logoBlack from "./assets/logo_black.png";
 import logoWhite from "./assets/logo_white.png";
-import { radioTheme } from "./components/radio";
-import { buttonTheme } from "./components/button";
-import { formLabelTheme } from "./components/formLabel";
+import { radioTheme } from "./components/htmlTagsThemes/radio";
+import { buttonTheme } from "./components/htmlTagsThemes/button";
+import { formLabelTheme } from "./components/htmlTagsThemes/formLabel";
 import { getMultiplier } from "./utils/multiplierCalculator";
+import { getCoordinatesByCityName } from "./utils/distanceBetweenCitiesCalculator";
 
 const customTheme = extendTheme({
   components: {
@@ -61,6 +62,9 @@ export const App = () => {
   const [colorMode, setColorMode] = useState("");
   const [carFrigoAdrNormalType, setCarFrigoAdrNormalType] = useState("");
   const [showInsertCitiesInputs, setShowInsertCitiesInputs] = useState(false);
+
+  getCoordinatesByCityName("Bucharest");
+
   useEffect(() => {
     setPrice("");
   }, [
@@ -241,28 +245,28 @@ export const App = () => {
 
   const handleShowInsertCitiesInputsChange = (value) => {
     if (value === "distanta") {
-      setShowInsertCitiesInputs(false)
-    } else if (value==="orase"){
-      setShowInsertCitiesInputs(true)
+      setShowInsertCitiesInputs(false);
+    } else if (value === "orase") {
+      setShowInsertCitiesInputs(true);
     }
-  }
+  };
   const setShowInsertCitiesInput = (
     <RadioGroup
-          onChange={handleShowInsertCitiesInputsChange}
-          value={showInsertCitiesInputs===false ? "distanta" : "orase"}
-        >
-          <Stack direction="row">
-            <Radio value="distanta" >Distanta</Radio>
-            <Radio value="orase">Orase</Radio>
-          </Stack>
-        </RadioGroup>
-  )
+      onChange={handleShowInsertCitiesInputsChange}
+      value={showInsertCitiesInputs === false ? "distanta" : "orase"}
+    >
+      <Stack direction="row">
+        <Radio value="distanta">Distanta</Radio>
+        <Radio value="orase">Orase</Radio>
+      </Stack>
+    </RadioGroup>
+  );
 
   const insertCitiesInputs = (
     <Select>
-      <option key ="bucuresti">Bucuresti</option>
+      <option key="bucuresti">Bucuresti</option>
     </Select>
-  )
+  );
 
   const tripTypeInternNumberInput = (
     <>
@@ -391,7 +395,6 @@ export const App = () => {
     </>
   );
 
-
   const internalInputFieldsAreValid = () => {
     return (
       (carType === "camion" &&
@@ -495,7 +498,9 @@ export const App = () => {
               {carFrigoAdrNormalType !== "" && internalTransportionTypeInputs}
               {carTransportationType !== "" && tripTypeInternNumberInput}
               {internalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>
+                  Calculate
+                </Button>
               )}
             </>
           )}
@@ -507,13 +512,14 @@ export const App = () => {
               {carFrigoAdrNormalType !== "" &&
                 externalCarTransportationTypeInputs}
               {carTransportationType !== "" && setShowInsertCitiesInput}
-              {showInsertCitiesInputs===false &&
-              externalCountryInput}
-              {showInsertCitiesInputs === true &&  insertCitiesInputs}
+              {showInsertCitiesInputs === false && externalCountryInput}
+              {showInsertCitiesInputs === true && insertCitiesInputs}
               {(importingFromCountry !== "" || exportingToCountry !== "") &&
                 externalTripNumberInput}
               {externalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>
+                  Calculate
+                </Button>
               )}
             </>
           )}
