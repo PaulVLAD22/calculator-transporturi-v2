@@ -34,7 +34,10 @@ import { radioTheme } from "./components/htmlTagsThemes/radio";
 import { buttonTheme } from "./components/htmlTagsThemes/button";
 import { formLabelTheme } from "./components/htmlTagsThemes/formLabel";
 import { getMultiplier } from "./utils/multiplierCalculator";
-import { getCoordinatesByCityName } from "./utils/distanceBetweenCitiesCalculator";
+import {
+  getCoordinatesByCityName,
+  getDistanceInKmBetweenCities,
+} from "./utils/distanceBetweenCitiesCalculator";
 
 const customTheme = extendTheme({
   components: {
@@ -63,7 +66,9 @@ export const App = () => {
   const [carFrigoAdrNormalType, setCarFrigoAdrNormalType] = useState("");
   const [showInsertCitiesInputs, setShowInsertCitiesInputs] = useState(false);
 
-  getCoordinatesByCityName("Bucharest");
+  useEffect(() => {
+    console.log(getDistanceInKmBetweenCities("Timisoara", "Bucuresti"));
+  }, []);
 
   useEffect(() => {
     setPrice("");

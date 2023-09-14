@@ -1,16 +1,18 @@
-export const getDistanceInKmBetweenCities = (firstCity, secondCity) => {
-  return getDistanceBetweenCoordonates(
-    getCoordinatesByCityName(firstCity),
-    getCoordinatesByCityName(secondCity)
-  );
+export const getDistanceInKmBetweenCities = async (firstCity, secondCity) => {
+  const coord1 = await getCoordinatesByCityName(firstCity);
+  const coord2 = await getCoordinatesByCityName(secondCity);
+  return getDistanceBetweenCoordonates(coord1, coord2);
 };
 
 export const getCoordinatesByCityName = async (cityName) => {
-  const apiKey = "51fdbf0af0b805f6bb13a3b6b1cb0e4f";
-  const getCoordinatesUrlFirstCity = `http://api.openweathermap.org/geo/1.0/direct?q={${cityName}}&appid={${apiKey}}`;
+  const apiKey = "eec2de0a36d705bd363d36d865c94800";
+  const getCoordinatesUrlFirstCity = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
   const res = await fetch(getCoordinatesUrlFirstCity);
   const data = await res.json();
-  console.log(data);
+  return {
+    lat: data[0].lat,
+    lon: data[0].lon,
+  };
 };
 export const getDistanceBetweenCoordonates = (coord1, coord2) => {
   let lat1 = coord1.lat;
@@ -35,6 +37,6 @@ export const getDistanceBetweenCoordonates = (coord1, coord2) => {
     Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) ** 2;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const distance = earthRadius * c;
-
-  return distance;
+  // return the distance with no decimals
+  return distance.toFixed(0);
 };
