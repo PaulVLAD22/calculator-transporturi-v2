@@ -1,4 +1,7 @@
-Deploy: npm run deploy
+Deploy steps: 
+
+1.npm run deploy
+2. set crystal-logistics-services.org as custom domain in settings->pages
 
 Cum se schimba preturile aplicatiei? 
 
