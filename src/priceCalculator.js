@@ -162,11 +162,31 @@ export const calculateExternalPrice = (
   ) {
     const matchingDistanceKey = findDistanceKey(pricingObject, tripDistanceKm);
     priceRange = pricingObject[outsideCountry];
-    return (
-      roundToDecimal(priceRange[0] * tripDistanceKm) +
-      "-" +
-      roundToDecimal(priceRange[1] * tripDistanceKm)
-    );
+    if (externalTripType === "import") {
+      return (
+        roundToDecimal(
+          applySpecialPrice(
+            priceRange[0] * tripDistanceKm,
+            tripDistanceKm,
+            outsideCountry
+          )
+        ) +
+        "-" +
+        roundToDecimal(
+          applySpecialPrice(
+            priceRange[1] * tripDistanceKm,
+            tripDistanceKm,
+            outsideCountry
+          )
+        )
+      );
+    } else {
+      return (
+        roundToDecimal(priceRange[0] * tripDistanceKm) +
+        "-" +
+        roundToDecimal(priceRange[1] * tripDistanceKm)
+      );
+    }
   } else if (
     carType === "camion" &&
     carTransportationType === "grupaj" &&
@@ -204,4 +224,20 @@ export const calculateExternalPrice = (
     );
   }
   return priceRange[0] + "-" + priceRange[1];
+};
+
+const applySpecialPrice = (price, distanceInKm, country) => {
+  if (["Belgia", "Franta", "Germania", "Elvetia", "Olanda"].includes(country)) {
+    if (distanceInKm < 1300) {
+      return price * 1.35;
+    } else if (distanceInKm >= 1300 && distanceInKm < 1700) {
+      return price * 1.2;
+    }
+  } else if (["Polonia", "Italia"].includes(country)) {
+    if (distanceInKm < 1300) {
+      return price * 1.25;
+    } else if (distanceInKm >= 1300 && distanceInKm < 1700) {
+      return price * 1.1;
+    }
+  }
 };
