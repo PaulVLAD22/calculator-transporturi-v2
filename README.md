@@ -1,3 +1,5 @@
+Deploy: npm run deploy
+
 Cum se schimba preturile aplicatiei? 
 
 1. acceseaza <a href="https://github.com/PaulVLAD22/calculator-transporturi-v2/blob/main/src/assets/transport_data.tsx">fisierul cu preturi</a>
