@@ -13,8 +13,7 @@ export const getMultiplier = (
   if (tripType === "extern") {
     if (carType === "sprinter" && carTransportationType === "grupaj") {
       multipier *= 1.2;
-    }
-    if (
+    } else if (
       carType === "camion" &&
       externalTripType === "import" &&
       carTransportationType === "grupaj"
