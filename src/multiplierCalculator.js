@@ -1,3 +1,5 @@
+import { extern } from "./assets/transport_data";
+
 export const getMultiplier = (
   tripType,
   externalTripType,
@@ -8,6 +10,8 @@ export const getMultiplier = (
   console.log(carFrigoAdrNormalType);
   console.log(carType);
   console.log(carTransportationType);
+  console.log(tripType);
+  console.log(externalTripType);
   let multipier = 1;
 
   if (tripType === "extern") {
@@ -51,5 +55,6 @@ export const getMultiplier = (
       }
     }
   }
+  console.log(multipier);
   return multipier;
 };

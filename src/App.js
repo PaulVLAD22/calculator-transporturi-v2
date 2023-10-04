@@ -412,6 +412,8 @@ export const App = () => {
   const calculateTripPrice = (tripType) => {
     let price;
     let multiplier = getMultiplier(
+      tripType,
+      externalTripType,
       carFrigoAdrNormalType,
       carType,
       carTransportationType
@@ -476,7 +478,9 @@ export const App = () => {
               {carFrigoAdrNormalType !== "" && internalTransportionTypeInputs}
               {carTransportationType !== "" && tripTypeInternNumberInput}
               {internalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>
+                  Calculate
+                </Button>
               )}
             </>
           )}
@@ -491,7 +495,9 @@ export const App = () => {
               {(importingFromCountry !== "" || exportingToCountry !== "") &&
                 externalTripNumberInput}
               {externalInputFieldsAreValid() && (
-                <Button onClick={() => calculateTripPrice(tripType)}>Calculate</Button>
+                <Button onClick={() => calculateTripPrice(tripType)}>
+                  Calculate
+                </Button>
               )}
             </>
           )}
