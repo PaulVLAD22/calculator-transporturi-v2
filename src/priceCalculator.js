@@ -240,4 +240,5 @@ const applySpecialPrice = (price, distanceInKm, country) => {
       return price * 1.1;
     }
   }
+  return price;
 };
