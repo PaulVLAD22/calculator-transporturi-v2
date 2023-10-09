@@ -1,39 +1,35 @@
-import React, { useState, useEffect } from "react";
 import {
-  ChakraProvider,
   Box,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
+  Button,
   Center,
-  Radio,
-  RadioGroup,
-  Stack,
+  ChakraProvider,
+  Flex,
+  FormLabel,
+  Image,
   NumberInput,
   NumberInputField,
-  FormLabel,
+  Radio,
+  RadioGroup,
   Select,
-  Button,
+  Stack,
   Text,
-  Flex,
-  Image,
+  VStack,
   extendTheme,
 } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import { extern, intern } from "./assets/transport_data";
+import logoBlack from "./assets/logo_black.png";
+import logoWhite from "./assets/logo_white.png";
+import { extern } from "./assets/transport_data";
+import { buttonTheme } from "./components/button";
+import { formLabelTheme } from "./components/formLabel";
+import { radioTheme } from "./components/radio";
+import { getMultiplier } from "./multiplierCalculator";
 import {
   calculateExternalPrice,
   calculateInternalPrice,
   roundToDecimal,
 } from "./priceCalculator";
-import logoBlack from "./assets/logo_black.png";
-import logoWhite from "./assets/logo_white.png";
-import { radioTheme } from "./components/radio";
-import { buttonTheme } from "./components/button";
-import { formLabelTheme } from "./components/formLabel";
-import { getMultiplier } from "./multiplierCalculator";
 
 const customTheme = extendTheme({
   components: {
@@ -60,6 +56,9 @@ export const App = () => {
   const [price, setPrice] = useState("");
   const [colorMode, setColorMode] = useState("");
   const [carFrigoAdrNormalType, setCarFrigoAdrNormalType] = useState("");
+  const [calculatedTransportInfo, setCalculatedTransportInfo] = useState("");
+  const [showCalculatedTransportInfo, setShowCalculatedTransportInfo] =
+    useState(false);
 
   useEffect(() => {
     setPrice("");
@@ -409,6 +408,22 @@ export const App = () => {
     );
   };
 
+  const getTransportInfo = () => {
+    let transportInfo = "";
+
+    transportInfo += "Car type " + carType + "\n";
+    transportInfo += "Car transportation type " + carTransportationType + "\n";
+    transportInfo += "Trip distance km " + tripDistanceKm + "\n";
+    transportInfo += "External trip type " + externalTripType + "\n";
+    transportInfo += "Importing from country " + importingFromCountry + "\n";
+    transportInfo += "Exporting to country " + exportingToCountry + "\n";
+    transportInfo += "Weight of goods " + weightOfGoods + "\n";
+    transportInfo += "No of floor metters " + noOfFloorSquareMetters + "\n";
+    transportInfo += "No of pallets " + noOfPallets + "\n";
+    transportInfo += "\n";
+    setCalculatedTransportInfo(transportInfo);
+  };
+
   const calculateTripPrice = (tripType) => {
     let price;
     let multiplier = getMultiplier(
@@ -418,6 +433,7 @@ export const App = () => {
       carType,
       carTransportationType
     );
+    getTransportInfo();
     if (tripType === "extern") {
       price = calculateExternalPrice(
         carType,
@@ -505,7 +521,18 @@ export const App = () => {
           {price !== "" && (
             <Text>{tripType === "intern" ? "LEI" : "EURO"}</Text>
           )}
-          {errorMessage}
+          {price !== "" && (
+            <Button
+              onClick={() =>
+                setShowCalculatedTransportInfo(!showCalculatedTransportInfo)
+              }
+            >
+              Detalii Cursa
+            </Button>
+          )}
+          {showCalculatedTransportInfo && (
+            <Text whiteSpace={"pre-line"}>{calculatedTransportInfo}</Text>
+          )}
         </VStack>
       </Center>
     </ChakraProvider>
