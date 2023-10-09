@@ -471,7 +471,7 @@ export const App = () => {
       <Center
         className="App"
         w="100vw"
-        h="100vh"
+        minH="100vh"
         overflow="hidden"
         position="relative"
       >
@@ -483,6 +483,8 @@ export const App = () => {
           py="10"
           borderRadius={"3xl"}
           zIndex={1}
+          overflowY="auto"
+          overflowX="hidden"
         >
           <ColorModeSwitcher setColorMode={setColorMode} />
           {logoComponent}
